@@ -7,7 +7,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// load the env vars
+require('dotenv').config();
+
 var app = express();
+
+// connect to MongoDB Database
+
+require('./config/database'); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

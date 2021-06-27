@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const campgroundsCtrl = require('../controllers/campground');
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('home');
-});
+router.get('/', campgroundsCtrl.index);
+router.get('/makecampground', campgroundsCtrl.create);
 
 module.exports = router;
