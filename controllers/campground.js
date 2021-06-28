@@ -5,7 +5,7 @@ function index (req, res){
 }
 
 async function create (req, res){
-    const camp = new Campground({ title: 'My Backyard '});
+    const camp = new Campground({ title: 'My Backyard', description: 'cheap camping'});
     await camp.save();
     res.send(camp);
 }
