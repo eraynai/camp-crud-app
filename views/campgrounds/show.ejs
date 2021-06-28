@@ -7,11 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>All Campgrounds</h1>
     <ul>
-        <% for(let camp of campground) { %>
-            <li><a href="/campgrounds/<%= camp._id %>"><%= camp.title %></a></li>
-        <% } %>
+        <li><%= singleCampground.title %></li>
     </ul>
 </body>
 </html>

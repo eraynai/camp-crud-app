@@ -7,6 +7,12 @@ async function index (req, res){
     res.render('campgrounds/index', { campground });
 }
 
+async function show (req, res){
+    const singleCampground = await Campground.findById(req.params.id);
+    res.render('campgrounds/show', { singleCampground });
+}
+
 module.exports = {
     index,
+    show
 }
