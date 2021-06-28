@@ -1,16 +1,12 @@
 const Campground = require('../models/campground');
 
-function index (req, res){
-    res.render('home');
-}
 
-async function create (req, res){
-    const camp = new Campground({ title: 'My Backyard', description: 'cheap camping'});
-    await camp.save();
-    res.send(camp);
+async function index (req, res){
+    const campground = await Campground.find({});
+    console.log(campground);
+    res.render('campgrounds/index', { campground });
 }
 
 module.exports = {
     index,
-    create,
 }
